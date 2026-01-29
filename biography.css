@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    background-color: rgb(12, 20, 77)
+}
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container{
+    text-align: center;
+    width: 700px;
+    height: 640px;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 5px 5px #05031a;
+
+    animation: fadeSlideIn 1s ease-out forwards;
+
+}
+.profile{
+    width: 150px;     
+    height: 150px;     
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block;
+    margin: 20px auto;
+}
+.header{
+    margin: 0;
+    background-color: #FFC107;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding-bottom: 5px;
+}
+h1{
+    padding-top: 30px;
+    size: 15;
+    margin: 0;
+}
+h3{
+    margin: 5px;
+    margin-bottom: 20px;
+}
+.name{
+    font-weight: bold;
+}
+
+.info-sections {
+  display: flex; 
+  justify-self: baseline;               
+  padding: 40px;
+  padding-top:10px;
+  
+}
+
+.education, .hobbies {
+  width: 100%;                  
+  margin-top: 0;
+}
+/* EDUCATION */
+.education{
+    text-align: left;
+    margin-top: 0;
+    margin-left: 25px;
+    padding-left: 30px;
+    padding-right: 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.education:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #FFC107;
+}
+
+.education ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+/* HOBBIES */
+.hobbies{
+    text-align: left;
+    margin-top: 0;
+    margin-left: 30px;
+    padding-left: 30px;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.hobbies:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px #FFC107;
+}
+.hobbies ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+.githublink a{
+    padding-top: 0;
+    margin: 0;
+    color: black;
+    font-size: px;
+}
+.githublink a:hover{
+    background-color: #FFC107;
+    
+}
+
+
