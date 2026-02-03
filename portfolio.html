@@ -22,6 +22,12 @@
     />
 
     <style>
+      body {
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+      }
+
       .profile {
         width: 150px;
         max-width: 100%;
@@ -39,43 +45,240 @@
         padding: 0.5rem;
         min-height: 50px;
         flex-wrap: wrap;
+        transition:
+          color 0.3s,
+          border-color 0.3s;
       }
 
       .skill-card i {
-        font-size: 1.4rem;
         margin-right: 0.5rem;
+        padding: 0.2rem 0.2rem;
+        min-height: auto;
+        font-size: 1rem;
+      }
+
+      /* Skill card hover */
+      .skill-card:hover {
+        background-color: gray;
+        color: white;
+        border-color: gray;
+        cursor: pointer;
+      }
+
+      .skill-card:hover i {
+        color: white;
       }
 
       .custom-btn {
         background-color: transparent;
         color: black;
-        border: 2px solid black;
+        border: 2px solid #555;
         transition: 0.3s;
+        padding: 0.2rem 0.5rem;
       }
 
       .custom-btn:hover {
         background-color: gray;
         color: white;
       }
+
+      /* Certification card hover */
+      a:hover .card {
+        background-color: gray;
+        color: white;
+        border-color: gray;
+      }
+
+      a:hover .card small {
+        color: #e0e0e0 !important;
+      }
+
+      /* ===== DARK MODE ===== */
+      .dark-mode {
+        background-color: #121212;
+        color: #f8f9fa;
+      }
+
+      .dark-mode .bg-light {
+        background-color: #1e1e1e !important;
+        border-color: #333 !important;
+        color: #f8f9fa;
+      }
+
+      .dark-mode .bg-light h4,
+      .dark-mode .bg-light p,
+      .dark-mode .bg-light strong {
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .profile-header * {
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .form-check-input {
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+      }
+
+      .dark-mode .custom-btn {
+        color: white;
+        border-color: white;
+      }
+
+      .dark-mode .custom-btn:hover {
+        background-color: gray;
+        color: white;
+      }
+
+      .dark-mode .card {
+        background-color: #1e1e1e !important;
+        border-color: #333 !important;
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .card-body {
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .card-title,
+      .dark-mode .card-text {
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .text-muted {
+        color: #bbbbbb !important;
+      }
+
+      .dark-mode .card .btn-primary {
+        background-color: #333 !important;
+        border-color: #555 !important;
+        color: #f8f9fa !important;
+      }
+
+      .dark-mode .card .btn-primary:hover {
+        background-color: #555 !important;
+        border-color: #777 !important;
+      }
+
+      .dark-mode .card.bg-transparent {
+        background-color: #1e1e1e !important;
+      }
+
+      /* Social icons */
+      .social-icon {
+        color: black;
+        transition:
+          color 0.3s,
+          transform 0.3s;
+      }
+
+      .social-icon:hover {
+        color: gray;
+        transform: scale(1.1);
+      }
+
+      /* Dark mode social icons */
+      .dark-mode .social-icon {
+        color: white;
+      }
+
+      .dark-mode .social-icon:hover {
+        color: gray;
+      }
+
+      /* ===== ANIMATION ===== */
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      /* stagger effect for child elements */
+      .fade-up:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .fade-up:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .fade-up:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .fade-up:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      .fade-up:nth-child(5) {
+        animation-delay: 1s;
+      }
     </style>
   </head>
+
   <body>
     <div class="container mt-3 mb-3">
       <!-- PROFILE HEADER -->
       <div
-        class="container mt-3 p-4 d-flex flex-column flex-sm-row align-items-start gap-3"
+        class="container mt-3 p-4 d-flex flex-column flex-sm-row align-items-start gap-3 justify-content-between profile-header fade-up"
       >
-        <img src="profile.jpg" class="profile" alt="Mel Jimm S. Joves" />
-        <div>
-          <h5 class="mb-1">Mel Jimm S. Joves</h5>
-          <p class="text-muted mb-1">
-            <i class="bi bi-geo-alt-fill me-2"></i>
-            Governor Generoso, Davao Oriental
-          </p>
-          <h6 class="mb-0">BSIT Student / Aspiring Web Developer</h6>
-          <a href="Biography.html" target="_blank" class="btn custom-btn mt-3"
-            >Read More</a
-          >
+        <div class="d-flex gap-3">
+          <img src="morningprof.jpg" class="profile" alt="Mel Jimm S. Joves" />
+          <div>
+            <h5 class="mb-1">Mel Jimm S. Joves</h5>
+            <p class="text-muted mb-1">
+              <i class="bi bi-geo-alt-fill me-2"></i>Governor Generoso, Davao
+              Oriental
+            </p>
+            <h6 class="mb-0">BSIT Student / Aspiring Web Developer</h6>
+
+            <div class="d-flex align-items-center gap-3 mt-3">
+              <!-- Read More Button -->
+              <a href="Biography.html" target="_blank" class="btn custom-btn"
+                >Read More</a
+              >
+              <a
+                href="https://www.facebook.com/share/1FAPNVYY2U/?mibextid=wwXIfr"
+                target="_blank"
+                class="social-icon"
+                style="font-size: 1.5rem"
+              >
+                <i class="bi bi-facebook"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/melj_jvs"
+                target="_blank"
+                class="social-icon"
+                style="font-size: 1.5rem"
+              >
+                <i class="bi bi-instagram"></i>
+              </a>
+
+              <a
+                href="https://github.com/meljimm17"
+                target="_blank"
+                class="social-icon"
+                style="font-size: 1.5rem"
+              >
+                <i class="bi bi-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- DARK/LIGHT MODE SWITCH -->
+        <div class="align-self-start mt-2 mt-sm-0">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="modeToggle" />
+            <label class="form-check-label" for="modeToggle">Dark Mode</label>
+          </div>
         </div>
       </div>
 
@@ -83,8 +286,8 @@
       <div class="container mt-4">
         <div class="row g-3">
           <!-- LEFT COLUMN -->
-          <div class="col-12 col-md-8 d-flex flex-column gap-3">
-            <div class="bg-light border p-3 rounded-3">
+          <div class="col-12 col-md-7 d-flex flex-column gap-3">
+            <div class="bg-light border p-3 rounded-3 fade-up">
               <h4><i class="bi bi-person-circle"></i> About</h4>
               <hr />
               <p class="mb-0">
@@ -105,15 +308,62 @@
               </p>
             </div>
 
-            <div class="bg-light border p-3 rounded-3">
+            <div class="bg-light border p-3 rounded-3 fade-up">
               <h4><i class="bi bi-kanban"></i> Projects</h4>
               <hr />
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <div class="card h-100 bg-transparent fade-up">
+                    <div class="card-body">
+                      <h5 class="card-title">Portfolio Website</h5>
+                      <p class="card-text">
+                        A responsive personal website built with HTML, CSS,
+                        Bootstrap, and JS.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Technologies: <b>HTML, CSS, Bootstrap</b>
+                      </p>
+                      <a href="#" class="btn custom-btn">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="card h-100 bg-transparent fade-up">
+                    <div class="card-body">
+                      <h5 class="card-title">Task Manager App</h5>
+                      <p class="card-text">
+                        A simple CRUD web app to manage tasks using JavaScript
+                        and local storage.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Technologies: <b>HTML, CSS, JavaScript</b>
+                      </p>
+                      <a href="#" class="btn custom-btn">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="card h-100 bg-transparent fade-up">
+                    <div class="card-body">
+                      <h5 class="card-title">Booking System</h5>
+                      <p class="card-text">
+                        A web-based booking system that allows users to reserve
+                        services or appointments efficiently.
+                      </p>
+                      <p class="text-muted mb-2">
+                        Technologies: <b>HTML, CSS, JavaScript</b>
+                      </p>
+                      <a href="#" class="btn custom-btn">View Project</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <!-- RIGHT COLUMN -->
-          <div class="col-12 col-md-4 d-flex flex-column gap-3">
-            <div class="bg-light border p-3 rounded-3">
+          <div class="col-12 col-md-5 d-flex flex-column gap-3">
+            <div class="bg-light border p-3 rounded-3 fade-up">
               <h4><i class="bi bi-mortarboard"></i> Education</h4>
               <hr />
               <p class="mb-0">
@@ -125,83 +375,128 @@
               </p>
             </div>
 
-            <div class="bg-light border p-3 rounded-3">
+            <div class="bg-light border p-3 rounded-3 fade-up">
               <h4><i class="bi bi-code-slash"></i> Skills</h4>
               <hr />
-
-              <p class="text-muted mb-2">Frontend</p>
+              <p class="mb-2 text-muted">Frontend</p>
               <div class="row g-2">
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-filetype-html"></i> HTML
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-filetype-css"></i> CSS
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-filetype-js"></i> JavaScript
                   </div>
                 </div>
               </div>
-
-              <p class="text-muted mb-2 mt-3">Backend</p>
+              <p class="mb-2 mt-3 text-muted">Backend</p>
               <div class="row g-2">
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-cup-hot"></i> Java
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-code-square"></i> Python
                   </div>
                 </div>
               </div>
-
-              <p class="text-muted mb-2 mt-3">Tools & Frameworks</p>
+              <p class="mb-2 mt-3 text-muted">Tools & Frameworks</p>
               <div class="row g-2">
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-bootstrap"></i> Bootstrap
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-github"></i> GitHub
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-diagram-3"></i> Git
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-file-code"></i> VSCode
                   </div>
                 </div>
                 <div class="col-6 col-md-4">
-                  <div class="skill-card text-black rounded">
+                  <div class="skill-card rounded fade-up">
                     <i class="bi bi-pencil-square"></i> Figma
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="bg-light border p-3 rounded-3">
+            <div class="bg-light border p-3 rounded-3 fade-up">
               <h4><i class="bi bi-telephone"></i> Contact</h4>
               <hr />
-              <p class="mb-0">
-                University of Mindanao <br />
-                <strong>
-                  Bachelor of Science in Information Technology <br />
-                  Second Year Student
-                </strong>
+              <p>
+                <i class="bi bi-telephone-fill"></i> <strong>Phone:</strong> +63
+                9207027492
               </p>
+              <p>
+                <i class="bi bi-envelope-fill"></i>
+                <strong>Email:</strong> jmeljimm@gmail.com
+              </p>
+              <p>
+                <i class="bi bi-geo-alt-fill"></i>
+                <strong>Location:</strong> Governor Generoso, Davao Oriental,
+                Philippines
+              </p>
+            </div>
+
+            <div class="bg-light border p-3 rounded-3 fade-up">
+              <h4><i class="bi bi-award-fill"></i> Certifications</h4>
+              <hr />
+              <a
+                href="java.png"
+                target="_blank"
+                class="text-decoration-none text-dark bg-transparent"
+              >
+                <div class="card mb-2 fade-up">
+                  <div class="card-body py-2">
+                    <h6 class="mb-0">IT Specialist – Java</h6>
+                    <small class="text-muted">Certiport</small>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="python.jpg"
+                target="_blank"
+                class="text-decoration-none text-dark bg-transparent"
+              >
+                <div class="card mb-2 fade-up">
+                  <div class="card-body py-2">
+                    <h6 class="mb-0">Python Developer – Python</h6>
+                    <small class="text-muted">Sololearn</small>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="SQL.jpg"
+                target="_blank"
+                class="text-decoration-none text-dark bg-transparent"
+              >
+                <div class="card mb-2 fade-up">
+                  <div class="card-body py-2">
+                    <h6 class="mb-0">Introduction to SQL – SQL</h6>
+                    <small class="text-muted">Sololearn</small>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -211,5 +506,22 @@
     <footer class="bg-dark text-white text-center py-3 mt-4">
       <p class="mb-0">© 2026 Mel Jimm S. Joves. All rights reserved.</p>
     </footer>
+
+    <script>
+      const toggleSwitch = document.getElementById("modeToggle");
+      const switchLabel = document.querySelector('label[for="modeToggle"]');
+      const profileImg = document.querySelector(".profile");
+
+      toggleSwitch.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          switchLabel.textContent = "Light Mode";
+          profileImg.src = "eveningprof.jpg";
+        } else {
+          switchLabel.textContent = "Dark Mode";
+          profileImg.src = "morningprof.jpg";
+        }
+      });
+    </script>
   </body>
 </html>
