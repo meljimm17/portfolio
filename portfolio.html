@@ -81,17 +81,22 @@
         color: white;
       }
 
-      /* Hover effect for certification cards in dark mode */
-      .dark-mode a:hover .card {
+      .card {
+        transition:
+          background-color 0.3s,
+          color 0.3s,
+          border-color 0.3s;
+      }
+
+      a:hover .card {
         background-color: gray !important;
         color: white !important;
         border-color: gray !important;
       }
 
-      .dark-mode a:hover .card small {
+      a:hover .card small {
         color: #e0e0e0 !important;
       }
-
       /* ===== DARK MODE ===== */
       .dark-mode {
         background-color: #121212;
